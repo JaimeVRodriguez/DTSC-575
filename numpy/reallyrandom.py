@@ -1,16 +1,20 @@
 import numpy as np
-import numpy as np
-import pandas as pd
 import sys
 
 seed = np.random.seed(42)
 
-rows = int(sys.argv[1])
-columns = int(sys.argv[2])
+size = int(sys.argv[1])
+multiplier = int(sys.argv[2])
+index = int(sys.argv[3])
+
+def random_val():
+    arr = np.random.randint(0, 10, size=size)
+    arr2 = arr * multiplier
+    if index < size:
+        val = arr2[index]
+        print(f'Your random value is {val}')
+    else:
+        None
 
 
-def randDF():
-    df = pd.DataFrame(np.random.randint(0, 100, size=(rows, columns)))
-    print(df)
-
-randDF()
+random_val()
